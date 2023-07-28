@@ -5,7 +5,17 @@ const loadCountries=()=>{
 }
 
 const displayCountries=countries=>{
-    console.log(countries)
+    // console.log(countries)
+    const CountriesHTML= countries.map(country=>getCountriesHTML(country));
+    // console.log(CountriesHTML)
+    const container=document.getElementById('countries')
+    container.innerHTML=CountriesHTML.join(' ')
 }
-
-loadCountries()
+const getCountriesHTML=country=>{
+    return`
+      <div>
+         <h2>${country.name.common}</h2>
+      </div>
+      `
+}
+loadCountries();
