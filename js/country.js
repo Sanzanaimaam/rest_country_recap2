@@ -5,7 +5,7 @@ const loadCountries=()=>{
 }
 
 const displayCountries=countries=>{
-    // console.log(countries)
+    console.log(countries)
     const CountriesHTML= countries.map(country=>getCountriesHTML(country));
     // console.log(CountriesHTML)
     const container=document.getElementById('countries')
@@ -13,8 +13,10 @@ const displayCountries=countries=>{
 }
 const getCountriesHTML=country=>{
     return`
-      <div>
+      <div class="country">
          <h2>${country.name.common}</h2>
+         <img src="${country.flags.png}">
+         
       </div>
       `
 }
