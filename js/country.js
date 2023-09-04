@@ -11,11 +11,24 @@ const displayCountries=countries=>{
     const container=document.getElementById('countries')
     container.innerHTML=CountriesHTML.join(' ')
 }
+// original:
+// const getCountriesHTML=country=>{
+//     return`
+//       <div class="country">
+//          <h2>${country.name.common}</h2>
+//          <img src="${country.flags.png}">
+         
+//       </div>
+//       `
+// }
+
+// destructure:
 const getCountriesHTML=country=>{
+    const{name, flags}=country;
     return`
       <div class="country">
-         <h2>${country.name.common}</h2>
-         <img src="${country.flags.png}">
+         <h2>${name.common}</h2>
+         <img src="${flags.png}">
          
       </div>
       `
